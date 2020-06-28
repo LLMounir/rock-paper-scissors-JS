@@ -8,6 +8,19 @@ const rock_div = document.getElementById("r")
 const paper_div = document.getElementById("p")
 const scissors_div = document.getElementById("s")
 
+const menuBtn = document.querySelector('.menu-btn');
+const invisibleBtn = document.querySelector('.btn-invisible');
+let menuOpen = false;
+invisibleBtn.addEventListener('click', () => {
+    if (!menuOpen) {
+        menuBtn.classList.add('open');
+        menuOpen = true;
+    } else {
+        menuBtn.classList.remove('open');
+        menuOpen = false;
+    }
+});
+
 function getComputerChoice(){
     const choices = ['r','p','s'];
     return choices[Math.floor(Math.random()*3)];
